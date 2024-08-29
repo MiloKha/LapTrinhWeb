@@ -1,0 +1,26 @@
+﻿@{
+    ViewBag.Title = "DangNhap";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link href="~/Context/DangNhap.css" rel="stylesheet" />
+
+<form action="action_page.php" method="post">
+    <h3 style="text-align:center">Đăng nhập</h3>
+    <div class="container">
+        <label for="uname"><b>Username</b></label>
+        <input type="text" placeholder="Enter Username" name="uname" required>
+
+        <label for="psw"><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" name="psw" required>
+
+        <button class="Loginbtn btn" type="submit">Login</button>
+        <label>
+            <input type="checkbox" checked="checked" name="remember"> Remember me
+        </label>
+    </div>
+
+    <div class="container">
+        <span>Chưa có tài khoản? Hãy <a href="~/Home/DangKy">Đăng ký</a>.</span>       
+        <p><span>Quên <a href="#">password </a>?</span></p>
+    </div>
+</form>

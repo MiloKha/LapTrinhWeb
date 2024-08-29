@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="dbQuanLyThuCung">
+  <DataContextMoniker Name="/dbQuanLyThuCungDataContext" />
+  <nestedChildShapes>
+    <classShape Id="7b40a269-f7ac-4291-8c1c-5b666a4e9395" absoluteBounds="2.75, 1.875, 2, 1.3862939453125">
+      <DataClassMoniker Name="/dbQuanLyThuCungDataContext/KHACH" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7b0ff1ea-0412-448d-805d-676f6a813682" absoluteBounds="2.765, 2.335, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

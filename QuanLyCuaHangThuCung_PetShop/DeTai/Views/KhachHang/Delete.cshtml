@@ -1,0 +1,42 @@
+﻿@model DeTai.KHACHHANG
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h3>XÓA KHÁCH HÀNG</h3>
+<hr />
+
+<h3>Bạn có chắc muốn xóa?</h3>
+<fieldset>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.MAKH)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.MAKH)
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.TENKH)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TENKH)
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.MATHUCUNG)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.MATHUCUNG)
+    </div>
+</fieldset>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <p>
+        <input class="btn" type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "DS_KhachHang2")
+    </p>
+}

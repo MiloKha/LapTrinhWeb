@@ -1,0 +1,28 @@
+﻿@{
+    ViewBag.Title = "DangKy";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link href="~/Context/DangKy.css" rel="stylesheet" />
+
+<form action="action_page.php">
+    <div class="container">
+        <h3>Đăng ký</h3>
+        <p>Điền đầy đủ thông tin để đăng ký tài khoản.</p>
+        <hr>
+
+        <label for="email"><b>Email</b></label>
+        <input type="text" placeholder="Enter Email" name="email" id="email" required>
+
+        <label for="psw"><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" name="psw" id="psw" required>
+
+        <label for="psw-repeat"><b>Repeat Password</b></label>
+        <input type="password" placeholder="Repeat Password" name="psw-repeat" id="psw-repeat" required>
+        <hr>
+        <button type="submit" class="registerbtn">Đăng ký</button>
+    </div>
+
+    <div class="container signin">
+        <p>Đã có tài khoản? <a href="~/Home/DangNhap">Đăng nhập</a>.</p>
+    </div>
+</form>

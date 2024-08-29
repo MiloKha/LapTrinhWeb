@@ -1,0 +1,87 @@
+﻿@model DeTai.Models.THU_CUNG           
+
+@{
+    ViewBag.Title = "Chi tiết thú cưng";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h3><br />Chi tiết thú cưng</h3>
+<hr />
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-4 col-sm-12 col-xs-12">
+            <img src="~/Image/@Html.DisplayFor(model => model.HINHTC)" width="100%" style="min-height:80px;" alt=" image" />
+        </div>
+        <div class ="col-md-4 col-sm-12 col-xs-12" style="font-size:20px">
+            <table class="table">
+                <tr>
+                    <td style="font-weight:bold"><p class="title-item">Tên thú cưng:</p></td>
+                    <td>
+                        @Model.TENTHUCUNG
+                    </td>
+                </tr>
+                <tr>
+                    <td style="font-weight:bold"><p class="title-item">Tuổi:</p></td>
+                    <td>
+                        @Model.TUOITC
+                    </td>
+                </tr>
+                <tr>
+                    <td style="font-weight:bold"><p class="title-item">Giới tính:</p></td>
+                    <td>
+                        @Model.GIOITINH
+                    </td>
+                </tr>
+                <tr>
+                    <td style="font-weight:bold"><p class="title-item">Loại thú cưng:</p></td>
+                    <td>
+                        @Model.LOAI
+                    </td>
+                </tr>
+                <tr>
+                    <td style="font-weight:bold"><p class="title-item">Giới thiệu:</p></td>
+                    <td>
+                        <h5 style="font-weight:normal">@ViewBag.NAMECTTC.GioiThieu</h5>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="font-weight:bold"><p class="title-item">Nguồn gốc:</p></td>
+                    <td>
+                        <h5 style="font-weight:normal">@ViewBag.NAMECTTC.NguonGoc</h5>
+                    </td>
+                </tr>
+            </table>    
+            <br />         
+            <a href="~/Home/Index" class="btn btn-primary">Trở lại</a>
+        </div>
+        <div class="col-md-4 col-sm-12 col-xs-12" style="font-size:20px">
+            <div class="card bao-hanh">
+                <h5 class="ml-2 mt-2">Bảo hành</h5>
+                <ul style="list-style-type:none">
+                    <li>Chính Sách Bảo Hành! Quyền lợi và trách nhiệm hai bên:</li>
+                </ul>
+                <div>                
+                    <div id="demo-bh" class="pt-4 collapse show" style="">
+                        <h5 class="ml-2">Chính sách bảo hành</h5>
+                        <ol>
+                            <li>
+                                Bên A có nghĩa vụ thực hiện gói bảo hiểm thú cưng, cho bên B nếu vật nuôi bị mắc một trong các bệnh nằm trong phạm vi các bệnh virus đã được tiêm phòng trong vòng ba trăm sáu mươi sáu (366) ngày kể từ ngày bàn giao vật nuôi.
+                            </li>
+                            <li>Các bệnh virus trong trường hợp bảo hành 366 ngày như sau</li>
+                            <li>
+                                Đối với chó: Bệnh Carré, bệnh do Parvovirus, viêm gan truyền nhiễm, bệnh ho cũi chó, bệnh phó cúm, bệnh do Leptospira, bệnh do Coronavirus.
+                                Đối với mèo: giảm bạch cầu Paleucopenia, viêm khí quản truyền nhiễm  Rhinotrachetitis, bệnh hô hấp do Herpevirus.
+                            </li>
+                            <li>
+                                Bên A chịu trách nhiệm bảo hiểm 30 ngày nếu vật nuôi mắc các bệnh về virus chưa có thuốc vacxin phòng chống và bệnh ký sinh trùng máu.
+                            </li>
+                            <li>
+                                Để tránh những vấn đề tiêu cực, trục lợi bảo hiểm. Nếu bên B điều trị tại các cơ sở thú y ngoài những địa điểm thú y mà Bên A niêm yết mà chưa được sự chỉ định cũng như đồng ý từ bên A, quý khách vui lòng tự thanh toán phí chữa trị.    
+                            </li>                         
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

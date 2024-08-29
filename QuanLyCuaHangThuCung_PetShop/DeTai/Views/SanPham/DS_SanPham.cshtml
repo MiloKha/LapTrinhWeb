@@ -1,0 +1,61 @@
+﻿@model IEnumerable<DeTai.Models.SANPHAM>
+
+@{
+    ViewBag.Title = "Sản phẩm";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h3><br />Danh sách sản phẩm</h3>
+<hr />
+<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel" style="margin-bottom:30px;">
+    <div class="carousel-inner">
+        <div class="carousel-item">
+            <img src="~/Image/sp1.png" class="d-block w-100" height="650" alt="..." />
+        </div>
+        <div class="carousel-item">
+            <img src="~/Image/sp2.jpg" class="d-block w-100" height="650" alt="..." />
+        </div>
+        <div class="carousel-item">
+            <img src="~/Image/sp3.png" class="d-block w-100" height="650" alt="..." />
+        </div>
+        <div class="carousel-item">
+            <img src="~/Image/sp4.png" class="d-block w-100" height="650" alt="..." />
+        </div>
+        <div class="carousel-item">
+            <img src="~/Image/sp5.png" class="d-block w-100" height="650" alt="..." />
+        </div>
+        <div class="carousel-item">
+            <img src="~/Image/sp6.png" class="d-block w-100" height="650" alt="..." />
+        </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+
+<div class="container-fluid">
+    <div class="container row-cols-3 row text-center">
+        @foreach (DeTai.Models.SANPHAM item in Model)
+        {
+            <div class="card col-4 p-2" style="width: 20rem; margin-left:10px; margin-right:10px; margin-bottom:10px; margin-top:10px; cursor:pointer; box-shadow:0px 0px 5px black">
+                <img src="~/Image/@item.HINHSP" class="card-header" width="100%" height="100%" alt="Image" />
+                
+                <div class="card-body">
+                    <h5 class="card-title" style="min-height:80px;font-size:30px">@item.TENSP</h5>
+                    <p class="card-text" style="min-height: 30px; text-align:left"><b>Mô tả: </b>@item.LOAISP</p>
+                    <p class="card-text" style="min-height: 20px; text-align: left"><b>Giá: </b>@item.ThanhTien vnđ</p>
+                    <div class="text-center">
+                        <a href="~/SanPham/ChiTietSP?id=@item.MASP" class="btn btn-primary">Xem chi tiết</a>
+                        @*@Html.ActionLink("Xem Chi Tiết", "ChiTietSP", "SanPham", new { @id = item.MASP }, new { @class = "btn btn-primary" })*@
+                    </div>
+                </div>
+
+            </div>
+        }
+    </div>
+</div>

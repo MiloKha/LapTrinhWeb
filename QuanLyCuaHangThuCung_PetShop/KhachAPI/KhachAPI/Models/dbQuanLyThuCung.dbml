@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QL_ThuCung" Class="dbQuanLyThuCungDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=LAPTOP-EH1UPPUL\SQLEXPRESS;Initial Catalog=QL_ThuCung;Persist Security Info=True;User ID=sa" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="QL_ThuCungConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.KHACH" Member="KHACHes">
+    <Type Name="KHACH">
+      <Column Name="MAKH" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TENKH" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="MATHUCUNG" Type="System.String" DbType="Char(10) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+</Database>

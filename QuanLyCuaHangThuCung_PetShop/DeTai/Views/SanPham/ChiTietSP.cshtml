@@ -1,0 +1,115 @@
+﻿@model DeTai.Models.SANPHAM
+
+@{
+    ViewBag.Title = "Chi tiết sản phẩm";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h3><br />Chi tiết sản phẩm</h3>
+<hr />
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-4 col-sm-12 col-xs-12">
+            <img src="~/Image/@Html.DisplayFor(model => model.HINHSP)" width="100%" style="min-height:80px;" alt=" image" />
+        </div>
+        <div class="col-md-4 col-sm-12 col-xs-12" style="font-size:20px">
+            <table class="table">
+                <tr>
+                    <td style="font-weight:bold"><p class="title-item">Tên sản phẩm:</p></td>
+                    <td>
+                        @Model.TENSP
+                    </td>
+                </tr>
+                <tr>
+                    <td style="font-weight:bold"><p class="title-item">Loại sản phẩm:</p></td>
+                    <td>
+                        @Model.LOAISP
+                    </td>
+                </tr>
+                <tr>
+                    <td style="font-weight:bold"><p class="title-item">Ngày sản xuất:</p></td>
+                    <td>
+                        @Model.NGAYSUDUNG
+                    </td>
+                </tr>
+                <tr>
+                    <td style="font-weight:bold"><p class="title-item">Ngày hết hạn:</p></td>
+                    <td>
+                        @Model.NGAYHETHAN
+                    </td>
+                </tr>
+                <tr>
+                    <td style="font-weight:bold"><p class="title-item">Mô tả:</p></td>
+                    <td>
+                        <h5 style="font-weight:normal">@ViewBag.NAMECTSP.MoTa</h5>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="font-weight:bold"><p class="title-item">Hướng dẫn sử dụng:</p></td>
+                    <td>
+                        <h5 style="font-weight:normal">@ViewBag.NAMECTSP.HuongDanSuDung</h5>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="font-weight:bold"><p class="title-item">Thành phần dinh dưỡng:</p></td>
+                    <td>
+                        <h5 style="font-weight:normal">@ViewBag.NAMECTSP.ThanhPhanDinhDuong</h5>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="font-weight:bold"><p class="title-item">Thương hiệu:</p></td>
+                    <td>
+                        <h5 style="font-weight:normal">@ViewBag.NAMECTSP.ThuongHieu</h5>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="font-weight:bold"><p class="title-item">Giá:</p></td>
+                    <td>
+                        <h5 style="font-weight:normal">@ViewBag.NAMECTSP.Gia VNĐ</h5>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="font-weight:bold"><p class="title-item">Khối lượng:</p></td>
+                    <td>
+                        <h5 style="font-weight:normal">@ViewBag.NAMECTSP.KhoiLuong</h5>
+                    </td>
+                </tr>
+            </table>
+            <br />
+            <div class="detail-btn-select">
+                <a href="~/Home/Index" class="btn btn-primary">Trở lại</a>
+
+                <a href="@Url.Action("ThemGioHang", "GioHang", new { @id = @Uri.EscapeDataString(Model.MASP).Replace("%20", ""), @URLstr = Request.Url.ToString() })" class="btn btn-success" style="display:inline-block;text-decoration:none;">MUA NGAY</a>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-12 col-xs-12" style="font-size:20px">
+            <div class="card bao-hanh">
+                <h5 class="ml-2 mt-2">Bảo hành</h5>
+                <ul style="list-style-type:none">
+                    <li>Chính Sách Bảo Hành! Quyền lợi và trách nhiệm hai bên:</li>
+                </ul>
+                <div>
+                    <div id="demo-bh" class="pt-4 collapse show" style="">
+                        <h5 class="ml-2">Chính sách bảo hành</h5>
+                        <ol>
+                            <li>
+                                Bên A có nghĩa vụ thực hiện gói bảo hiểm thú cưng, cho bên B nếu vật nuôi bị mắc một trong các bệnh nằm trong phạm vi các bệnh virus đã được tiêm phòng trong vòng ba trăm sáu mươi sáu (366) ngày kể từ ngày bàn giao vật nuôi.
+                            </li>
+                            <li>Các bệnh virus trong trường hợp bảo hành 366 ngày như sau</li>
+                            <li>
+                                Đối với chó: Bệnh Carré, bệnh do Parvovirus, viêm gan truyền nhiễm, bệnh ho cũi chó, bệnh phó cúm, bệnh do Leptospira, bệnh do Coronavirus.
+                                Đối với mèo: giảm bạch cầu Paleucopenia, viêm khí quản truyền nhiễm  Rhinotrachetitis, bệnh hô hấp do Herpevirus.
+                            </li>
+                            <li>
+                                Bên A chịu trách nhiệm bảo hiểm 30 ngày nếu vật nuôi mắc các bệnh về virus chưa có thuốc vacxin phòng chống và bệnh ký sinh trùng máu.
+                            </li>
+                            <li>
+                                Để tránh những vấn đề tiêu cực, trục lợi bảo hiểm. Nếu bên B điều trị tại các cơ sở thú y ngoài những địa điểm thú y mà Bên A niêm yết mà chưa được sự chỉ định cũng như đồng ý từ bên A, quý khách vui lòng tự thanh toán phí chữa trị.
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

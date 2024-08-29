@@ -1,0 +1,29 @@
+﻿@model IEnumerable<DeTai.Models.THU_CUNG>
+
+@{
+    ViewBag.Title = "Thú cưng";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h3><br />Danh sách thú cưng</h3>
+<hr />
+<div class="container-fluid">
+    <div class="container row-cols-3 row text-center">
+        @foreach (DeTai.Models.THU_CUNG item in Model)
+        {
+            <div class="card col-4 p-2" style="width: 20rem; margin-left:10px; margin-right:10px; margin-bottom:10px; margin-top:10px; cursor:pointer; box-shadow:0px 0px 5px black">
+                <img src="~/Image/@item.HINHTC" class="card-header" width="100%" height="100%" alt="Image" />
+
+                <div class="card-body">
+                    <h5 class="card-title" style="min-height:80px;font-size:30px">@item.LOAI</h5>
+                    <p class="card-text" style="min-height: 30px; text-align:left"><b>Tên thú cưng: </b>@item.TENTHUCUNG</p>
+                    <p class="card-text" style="min-height: 20px; text-align: left"><b>Giống: </b>@item.GIOITINH</p>
+                    <div class="text-center">
+                        @Html.ActionLink("Xem Chi Tiết", "ChiTietTC", "ThuCung", new { @id= item.MATHUCUNG }, new { @class = "btn btn-primary" })
+                    </div>
+                </div>
+
+            </div>
+        }
+    </div>
+</div>

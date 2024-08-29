@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="QUANLYTHUCUNGModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="KHACHHANG">
+          <Key>
+            <PropertyRef Name="MAKH" />
+          </Key>
+          <Property Name="MAKH" Type="int" Nullable="false" StoreGeneratedPattern="None" />
+          <Property Name="TENKH" Type="nvarchar" MaxLength="20" />
+          <Property Name="MATHUCUNG" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="THUCUNG2">
+          <Key>
+            <PropertyRef Name="MATHUCUNG" />
+          </Key>
+          <Property Name="MATHUCUNG" Type="int" Nullable="false" />
+          <Property Name="TENTHUCUNG" Type="nvarchar" MaxLength="20" />
+          <Property Name="TUOITC" Type="char" MaxLength="5" />
+          <Property Name="GIOITINH" Type="nvarchar" MaxLength="3" Nullable="false" />
+          <Property Name="LOAI" Type="nvarchar" MaxLength="30" />
+        </EntityType>
+        <Association Name="FK_TC_KH">
+          <End Role="THUCUNG2" Type="Self.THUCUNG2" Multiplicity="1" />
+          <End Role="KHACHHANG" Type="Self.KHACHHANG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="THUCUNG2">
+              <PropertyRef Name="MATHUCUNG" />
+            </Principal>
+            <Dependent Role="KHACHHANG">
+              <PropertyRef Name="MATHUCUNG" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="QUANLYTHUCUNGModelStoreContainer">
+          <EntitySet Name="KHACHHANG" EntityType="Self.KHACHHANG" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="THUCUNG2" EntityType="Self.THUCUNG2" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_TC_KH" Association="Self.FK_TC_KH">
+            <End Role="THUCUNG2" EntitySet="THUCUNG2" />
+            <End Role="KHACHHANG" EntitySet="KHACHHANG" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="QUANLYTHUCUNGModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="KHACHHANG">
+          <Key>
+            <PropertyRef Name="MAKH" />
+          </Key>
+          <Property Name="MAKH" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="None" />
+          <Property Name="TENKH" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="MATHUCUNG" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="THUCUNG2" Relationship="Self.FK_TC_KH" FromRole="KHACHHANG" ToRole="THUCUNG2" />
+        </EntityType>
+        <EntityType Name="THUCUNG2">
+          <Key>
+            <PropertyRef Name="MATHUCUNG" />
+          </Key>
+          <Property Name="MATHUCUNG" Type="Int32" Nullable="false" />
+          <Property Name="TENTHUCUNG" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="TUOITC" Type="String" MaxLength="5" FixedLength="true" Unicode="false" />
+          <Property Name="GIOITINH" Type="String" MaxLength="3" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="LOAI" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="KHACHHANGs" Relationship="Self.FK_TC_KH" FromRole="THUCUNG2" ToRole="KHACHHANG" />
+        </EntityType>
+        <Association Name="FK_TC_KH">
+          <End Role="THUCUNG2" Type="Self.THUCUNG2" Multiplicity="1" />
+          <End Role="KHACHHANG" Type="Self.KHACHHANG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="THUCUNG2">
+              <PropertyRef Name="MATHUCUNG" />
+            </Principal>
+            <Dependent Role="KHACHHANG">
+              <PropertyRef Name="MATHUCUNG" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="QUANLYTHUCUNGEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="KHACHHANGs" EntityType="Self.KHACHHANG" />
+          <EntitySet Name="THUCUNG2" EntityType="Self.THUCUNG2" />
+          <AssociationSet Name="FK_TC_KH" Association="Self.FK_TC_KH">
+            <End Role="THUCUNG2" EntitySet="THUCUNG2" />
+            <End Role="KHACHHANG" EntitySet="KHACHHANGs" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="QUANLYTHUCUNGModelStoreContainer" CdmEntityContainer="QUANLYTHUCUNGEntities">
+          <EntitySetMapping Name="KHACHHANGs">
+            <EntityTypeMapping TypeName="QUANLYTHUCUNGModel.KHACHHANG">
+              <MappingFragment StoreEntitySet="KHACHHANG">
+                <ScalarProperty Name="MAKH" ColumnName="MAKH" />
+                <ScalarProperty Name="TENKH" ColumnName="TENKH" />
+                <ScalarProperty Name="MATHUCUNG" ColumnName="MATHUCUNG" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="THUCUNG2">
+            <EntityTypeMapping TypeName="QUANLYTHUCUNGModel.THUCUNG2">
+              <MappingFragment StoreEntitySet="THUCUNG2">
+                <ScalarProperty Name="MATHUCUNG" ColumnName="MATHUCUNG" />
+                <ScalarProperty Name="TENTHUCUNG" ColumnName="TENTHUCUNG" />
+                <ScalarProperty Name="TUOITC" ColumnName="TUOITC" />
+                <ScalarProperty Name="GIOITINH" ColumnName="GIOITINH" />
+                <ScalarProperty Name="LOAI" ColumnName="LOAI" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

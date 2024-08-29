@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="QUANLYTHUCUNGModelStoreContainer" CdmEntityContainer="QUANLYTHUCUNGEntities">
+    <EntitySetMapping Name="KHACHHANGs">
+      <EntityTypeMapping TypeName="QUANLYTHUCUNGModel.KHACHHANG">
+        <MappingFragment StoreEntitySet="KHACHHANG">
+          <ScalarProperty Name="MAKH" ColumnName="MAKH" />
+          <ScalarProperty Name="TENKH" ColumnName="TENKH" />
+          <ScalarProperty Name="MATHUCUNG" ColumnName="MATHUCUNG" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="THUCUNG2">
+      <EntityTypeMapping TypeName="QUANLYTHUCUNGModel.THUCUNG2">
+        <MappingFragment StoreEntitySet="THUCUNG2">
+          <ScalarProperty Name="MATHUCUNG" ColumnName="MATHUCUNG" />
+          <ScalarProperty Name="TENTHUCUNG" ColumnName="TENTHUCUNG" />
+          <ScalarProperty Name="TUOITC" ColumnName="TUOITC" />
+          <ScalarProperty Name="GIOITINH" ColumnName="GIOITINH" />
+          <ScalarProperty Name="LOAI" ColumnName="LOAI" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

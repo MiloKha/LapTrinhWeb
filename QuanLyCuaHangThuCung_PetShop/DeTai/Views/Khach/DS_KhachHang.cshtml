@@ -1,0 +1,36 @@
+﻿@model IEnumerable<DeTai.Models.KHACH>
+
+@{
+    ViewBag.Title = "KhachHang";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h3>DANH SÁCH KHÁCH HÀNG THÂN THIẾT</h3>
+<hr />
+@Html.ActionLink("Create New", "addKhach", new {/* id=item.PrimaryKey */ })
+<table class="table">
+    <thead class="thread">
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.MAKH)</th>
+            <th>@Html.DisplayNameFor(model => model.TENKH)</th>
+            <th>@Html.DisplayNameFor(model => model.MATHUCUNG)</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.MAKH)</td>
+                <td>@Html.DisplayFor(modelItem => item.TENKH)</td>
+                <td>@Html.DisplayFor(modelItem => item.MATHUCUNG)</td>
+                <td>
+                    @Html.ActionLink("Update", "UpdateTC", new {/* id=item.PrimaryKey */ })
+                    |
+                    @Html.ActionLink("Delete", "DeleteTC", new {/* id=item.PrimaryKey */ })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+

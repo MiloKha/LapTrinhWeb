@@ -1,0 +1,82 @@
+﻿@{
+    ViewBag.Title = "LienHe";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<main id="main" class="row-content c-box_root main-content" style="">
+
+    <div class="container row-item">
+        <div class="row">
+            <div class="main-column row-content col-sm-12 col-xs-12">
+                <div class="c-box_contact">
+                    <h3 class="hide">Liên hệ</h3>
+                    <hr />
+                    <div class="main">
+                        <div class="form-area row">
+                            <div class="left col-md-4 c-list_contact">
+                                <div class="item">
+                                    <h3 class="c-title">Chăm sóc KH </h3>
+                                    <p><strong>tel:</strong>1900 123 456</p>
+                                    <p><strong>email:</strong> cskh@shoppet.vn</p>
+                                </div>
+                                <br />
+                                <div class="item">
+                                    <h3 class="c-title">Tuyển dụng </h3>
+                                    <p><strong>tel:</strong>1900 987 654</p>
+                                    <p><strong>email:</strong> tuyendung@shoppet.vn</p>
+                                </div>
+
+                                <div class="item c-item_recruiment">
+                                    <p>
+                                        Để biết thêm thông tin tuyển dụng vui lòng nhấn vào: <a href="#" title="Tuyển dụng"> Tuyển dụng</a>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="right col-md-8 c-box_form">
+                                <form action="#" method="post" name="contactForm" id="contactForm">
+                                    <div class="row c-group_form">
+                                        <div class="input-box col-md-6">
+                                            <input type="text" maxlength="255" name="contact_name" id="contact_name" value="" class="form-control " placeholder="Họ và tên">
+                                            <br />
+                                        </div>
+                                        <div class="input-box col-md-6">
+                                            <input type="text" maxlength="255" name="contact_email" id="contact_email" value="" class="form-control " placeholder="Email">
+                                            <br />
+                                        </div>
+                                        <div class="input-box col-md-6">
+                                            <input type="tel" maxlength="255" name="contact_phone" id="contact_phone" value="" class="form-control " placeholder="Số điện thoại *">
+                                            <br />
+                                        </div>
+                                        <div class="input-box col-md-6">
+                                            <select class="select_box form-control" name="contact_to" id="contact_to">
+                                                <option value="">Gửi tới</option>
+                                                <option value="2">Chăm sóc KH</option>
+                                                <option value="1">Tuyển dụng</option>
+                                            </select>
+                                            <br />
+                                        </div>
+                                    </div>
+
+                                    <div class="input-box box100">
+                                        <input type="text" maxlength="255" class="form-control" placeholder="Tiêu đề" name="contact_title" id="contact_title">
+                                        <br />
+                                    </div>
+                                    <div class="input-box box100">
+                                        <textarea rows="4" cols="30" name="message" id="message" placeholder="Nội dung"></textarea>
+                                        <br />
+                                    </div>
+                                    
+                                    <div class="input-box box100 boxsubmit">
+                                        <a href="#" class="btn btn-info" style="float:right;margin-right:50px">Gửi ngay</a>
+                                    </div>
+                                </form>
+                                <br />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</main>

@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="QUANLYTHUCUNGModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="KHACHHANG">
+    <Key>
+      <PropertyRef Name="MAKH" />
+    </Key>
+    <Property Name="MAKH" Type="int" Nullable="false" StoreGeneratedPattern="None" />
+    <Property Name="TENKH" Type="nvarchar" MaxLength="20" />
+    <Property Name="MATHUCUNG" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="THUCUNG2">
+    <Key>
+      <PropertyRef Name="MATHUCUNG" />
+    </Key>
+    <Property Name="MATHUCUNG" Type="int" Nullable="false" />
+    <Property Name="TENTHUCUNG" Type="nvarchar" MaxLength="20" />
+    <Property Name="TUOITC" Type="char" MaxLength="5" />
+    <Property Name="GIOITINH" Type="nvarchar" MaxLength="3" Nullable="false" />
+    <Property Name="LOAI" Type="nvarchar" MaxLength="30" />
+  </EntityType>
+  <Association Name="FK_TC_KH">
+    <End Role="THUCUNG2" Type="Self.THUCUNG2" Multiplicity="1" />
+    <End Role="KHACHHANG" Type="Self.KHACHHANG" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="THUCUNG2">
+        <PropertyRef Name="MATHUCUNG" />
+      </Principal>
+      <Dependent Role="KHACHHANG">
+        <PropertyRef Name="MATHUCUNG" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="QUANLYTHUCUNGModelStoreContainer">
+    <EntitySet Name="KHACHHANG" EntityType="Self.KHACHHANG" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="THUCUNG2" EntityType="Self.THUCUNG2" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_TC_KH" Association="Self.FK_TC_KH">
+      <End Role="THUCUNG2" EntitySet="THUCUNG2" />
+      <End Role="KHACHHANG" EntitySet="KHACHHANG" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
